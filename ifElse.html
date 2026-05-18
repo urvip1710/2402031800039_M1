@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>If-else statement</title>
+</head>
+<body>
+
+    <script>
+        var num = 7; 
+        if (num % 2 === 0) {
+            console.log(num + " is an Even number.");
+        } else {
+            console.log(num + " is an Odd number.");
+        }
+
+        var passingMark = 40;
+        var score = 65; 
+        if (score >= passingMark) {
+            console.log("Score: " + score + " - Result: PASS");
+        } else {
+            console.log("Score: " + score + " - Result: FAIL");
+        }
+
+        var year = 2024;    
+        if ((year % 4 === 0 )) {
+            console.log(year + " is a Leap Year.");
+        } else {
+            console.log(year + " is not a Leap Year.");
+        }
+
+        var age = 25;
+        if (age < 18) {
+            console.log("you are not eligible for driving.");
+        } else {
+            console.log("you are eligible for driving.");
+        }
+
+        var temperature = 42; 
+        var threshold = 40;
+        if (temperature > threshold) {
+            console.log("Temperature is high.");
+        } else {
+            console.log("Temperature is normal.");
+        }
+
+        var grade=90;
+        if (grade >= 90) {
+            console.log("Excellent");
+        } else if (grade >= 75) {
+            console.log("Good");
+        } else if (grade >= 60) {
+            console.log("Average");
+        } else {
+            console.log("Poor");
+        }
+        
+        var accountbalance = 15000;
+        var withdrawalAmount = 10000;
+        if (withdrawalAmount > accountbalance) {
+            console.log("Insufficient funds.");
+        } else {
+            console.log("Withdrawal successful.");
+        }
+    </script>
+
+</body>
+</html>
