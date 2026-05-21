@@ -1,203 +1,395 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Responsive Multi-Page Site</title>
+    <title>Glow Hair Care</title>
+
     <style>
-        
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'sans-serif';
+            font-family: Arial;
         }
 
-        html { scroll-behavior: smooth; }
+        body {
+            background: white;
+            font-size: 19px;
+            line-height: 1.7;
+        }
 
-        body { line-height: 1.6; color:darkcyan; background-color:white; }
-
-        /* Navigation */
-        nav {
-            background-color:darkcyan;
+        /* HEADER */
+        header {
+            background: linear-gradient(90deg, purple, #ff4d6d);
             color: white;
-            padding: 1rem;
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
+            padding: 20px;
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
 
-        .logo { font-size: 1.5rem; font-weight: bold; }
-
-        nav ul { display: flex; list-style: none; }
-
-        nav ul li a {
-            color:white;
-            text-decoration: none;
-            padding: 0.5rem 1rem;
-            transition: 0.3s;
+        nav a {
+            margin: 0 10px;
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
         }
 
-        nav ul li a:hover { color:lightgreen; }
-
-        
-        section {
-            padding: 100px 20px;
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
+        /* PAGE */
+        .page {
+            display: none;
+            padding: 30px;
         }
 
-        .container { max-width: 1000px; margin: auto; }
+        .active {
+            display: block;
+        }
 
-        h1 { font-size: 3rem; margin-bottom: 1rem; color: darkcyan; }
+        /* BOX */
+        .box {
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            margin-bottom: 15px;
+            box-shadow: 0 0 10px black;
+        }
 
-        p { font-size: 1.2rem; max-width: 700px; margin-bottom: 2rem; }
-
-        
+        /* GRID */
         .grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
-            width: 100%;
+            gap: 15px;
         }
 
+        /* CARD */
         .card {
-            background:white;
-            padding: 2rem;
-            border-radius: 8px;
-            box-shadow: 0 4px 6px ;
-        }
-
-        /* Contact Form */
-        form {
-            display: flex;
-            flex-direction: column;
-            width: 100%;
-            max-width: 500px;
             background: white;
-            padding: 2rem;
-            border-radius: 8px;
+            padding: 20px;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: 0 0 10px black;
         }
 
-        input, textarea {
-            margin-bottom: 1rem;
-            padding: 0.8rem;
-            border: 1px solid white;
-            border-radius: 4px;
+        /* PRICE */
+        .price {
+            font-size: 28px;
+            font-weight: bold;
+            color: #ff4d6d;
         }
 
+        /* BUTTON */
         button {
-            padding: 1rem;
-            background: darkcyan;
+            background: #ff4d6d;
             color: white;
             border: none;
-            border-radius: 4px;
+            padding: 12px;
+            width: 100%;
+            margin-top: 10px;
             cursor: pointer;
-            font-size: 1rem;
+            border-radius: 6px;
         }
 
-        button:hover { background:darkcyan; }
+        /* CART */
+        .cart {
+            background: white;
+            padding: 15px;
+            margin-top: 20px;
+            border-radius: 12px;
+        }
 
-        /* Background Colors for Sections */
-        #home { background: white; }
-        #about { background: white; }
-        #features { background:white; }
-        #help { background: white; }
-        #contact { background: white; }
+        /* PAYMENT */
+        .payment-box {
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+        }
 
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            nav { flex-direction: column; }
-            nav ul { margin-top: 1rem; }
-            nav ul li a { padding: 0.5rem; font-size: 0.9rem; }
-            h1 { font-size: 2rem; }
+        /* REVIEW BOX */
+        textarea,
+        input {
+            width: 100%;
+            padding: 10px;
+            margin-top: 10px;
+        }
+
+        .pay-option {
+            border: 2px solid #ddd;
+            padding: 12px;
+            margin: 10px 0;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+
+        .selected {
+            border-color: #ff4d6d;
+            background: white;
         }
     </style>
 </head>
+
 <body>
 
-    <nav>
-        <div class="logo">MyBrand</div>
-        <ul>
-            <li><a href="#home">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#features">Features</a></li>
-            <li><a href="#help">Help</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
-    </nav>
+    <header>
+        <h2>💇🏻 Glow Hair Care 💇🏻 </h2>
+        <nav>
+            <a onclick="show('home')">Home</a>
+            <a onclick="show('products')">Products</a>
+            <a onclick="show('tips')">Tips</a>
+            <a onclick="show('quiz')">Quiz</a>
+            <a onclick="show('payment')">Payment</a>
+            <a onclick="show('reviews')">Reviews</a>
+            <a onclick="show('about')">About</a>
+            <a onclick="show('faq')">FAQ</a>
+        </nav>
+    </header>
 
-    <!-- Home Page -->
-    <section id="home">
-        <div class="container">
-            <h1>Welcome to Our Site</h1>
-            <p>The ultimate solution for your digital needs. We build fast, responsive, and beautiful websites.</p>
-            <button onclick="location.href='#features'">Get Started</button>
+    <!-- HOME -->
+    <section id="home" class="page active">
+        <div class="box">
+            <h1>✨ Glow Hair Care</h1>
+            <p>Premium herbal hair care brand for strong, shiny, damage-free hair.</p>
+        </div>
+
+        <div class="box">
+            <h2>🌿 Why Choose Us?</h2>
+            <p>✔ Natural herbal ingredients</p>
+            <p>✔ No harmful chemicals</p>
+            <p>✔ Visible results in 7–14 days</p>
+            <p>✔ Trusted by thousands of customers</p>
         </div>
     </section>
 
-    <!-- About Page -->
-    <section id="about">
-        <div class="container">
-            <h1>About Us</h1>
-            <p>We are a team of passionate developers and designers dedicated to creating the best user experiences on the web. Our mission is to simplify technology for everyone.</p>
-        </div>
-    </section>
+    <!-- PRODUCTS (5 PRODUCTS) -->
+    <section id="products" class="page">
 
-    <!-- Features Page -->
-    <section id="features">
-        <div class="container">
-            <h1>Our Features</h1>
-            <div class="grid">
-                <div class="card">
-                    <h3>Responsive</h3>
-                    <p>Looks great on mobile, tablet, and desktop screens.</p>
-                </div>
-                <div class="card">
-                    <h3>Fast Loading</h3>
-                    <p>Optimized code ensures your users don't have to wait.</p>
-                </div>
-                <div class="card">
-                    <h3>Modern Design</h3>
-                    <p>Clean, professional aesthetics for today's web.</p>
-                </div>
+        <h1>Our Products</h1>
+
+        <div class="grid">
+
+            <div class="card">
+                <h3>Herbal Shampoo</h3>
+                <p>Reduces hair fall & strengthens roots</p>
+                <div class="price">₹299</div>
+                <button onclick="addCart('Shampoo')">Add to Cart</button>
             </div>
-        </div>
-    </section>
 
-    <!-- Help Page -->
-    <section id="help">
-        <div class="container">
-            <h1>Help & FAQ</h1>
-            <p>Need assistance? Check out our frequently asked questions or reach out to our support team.</p>
-            <div style="text-align: left; max-width: 600px; margin: auto;">
-                <p><strong>Q: Is this template free?</strong><br>A: Yes, you can use it for any project!</p>
-                <p><strong>Q: How do I customize it?</strong><br>A: Just edit the HTML and CSS blocks in the code.</p>
+            <div class="card">
+                <h3>Hair Oil</h3>
+                <p>Deep nourishment for scalp</p>
+                <div class="price">₹199</div>
+                <button onclick="addCart('Hair Oil')">Add to Cart</button>
             </div>
+
+            <div class="card">
+                <h3>Conditioner</h3>
+                <p>Soft & silky hair finish</p>
+                <div class="price">₹249</div>
+                <button onclick="addCart('Conditioner')">Add to Cart</button>
+            </div>
+
+            <div class="card">
+                <h3>Hair Mask</h3>
+                <p>Repair damaged & dry hair</p>
+                <div class="price">₹399</div>
+                <button onclick="addCart('Hair Mask')">Add to Cart</button>
+            </div>
+
+            <div class="card">
+                <h3>Hair Serum</h3>
+                <p>Instant shine & smoothness</p>
+                <div class="price">₹349</div>
+                <button onclick="addCart('Hair Serum')">Add to Cart</button>
+            </div>
+
+        </div>
+
+        <div class="cart">
+            <h2>🛒 Your Cart</h2>
+            <ul id="cartList"></ul>
+        </div>
+
+    </section>
+
+    <!-- TIPS -->
+    <section id="tips" class="page">
+        <div class="box">
+            <h1>💡 Hair Care Tips</h1>
+            <p>✔ Oil hair 2–3 times weekly</p>
+            <p>✔ Avoid heat styling tools</p>
+            <p>✔ Eat protein-rich food</p>
+            <p>✔ Drink enough water daily</p>
+            <p>✔ Trim hair regularly</p>
+        </div>
+    </section>
+    <!-- QUIZ (5 QUESTIONS ONE BY ONE) -->
+    <section id="quiz" class="page">
+        <div class="box">
+            <h2>🧠 Hair Quiz</h2>
+            <p id="q"></p>
+            <div id="options"></div>
+            <h3 id="result"></h3>
         </div>
     </section>
 
-    <!-- Contact Page -->
-    <section id="contact">
-        <div class="container">
-            <h1>Contact Us</h1>
-            <p>Have a question? Send us a message below.</p>
-            <form>
-                <input type="text" placeholder="Your Name" required>
-                <input type="email" placeholder="Your Email" required>
-                <textarea rows="5" placeholder="Your Message" required></textarea>
-                <button type="submit">Send Message</button>
-            </form>
+    <!-- PAYMENT -->
+    <section id="payment" class="page">
+
+        <div class="payment-box">
+
+            <h1>💳 Payment Method</h1>
+
+            <div class="pay-option" onclick="selectPay('UPI')">
+                <input type="radio"> UPI (GPay / PhonePe)
+            </div>
+
+            <div class="pay-option" onclick="selectPay('Net Banking')">
+                <input type="radio"> Net Banking
+            </div>
+
+            <div class="pay-option" onclick="selectPay('COD')">
+                <input type="radio"> Cash on Delivery
+            </div>
+
+            <div class="box">
+                <h3>Selected: <span id="selectedPay">None</span></h3>
+            </div>
+
+            <button onclick="confirmOrder()">Place Order</button>
+
         </div>
+
     </section>
+
+    <!-- REVIEWS -->
+    <section id="reviews" class="page">
+
+        <h1>⭐ Customer Reviews</h1>
+
+        <div class="box">
+            <p>"Best hair care brand!" - Priya</p>
+            <p>"My hair fall reduced!" - Rahul</p>
+        </div>
+
+        <div class="box">
+            <h2>➕ Add Your Review</h2>
+            <input placeholder="Your Name">
+            <textarea placeholder="Write your review..."></textarea>
+            <button>Submit Review</button>
+        </div>
+
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" class="page">
+
+        <div class="box">
+            <h1>📖 About Us</h1>
+            <p>
+                Glow Hair Care is committed to providing safe, herbal, and effective hair solutions.
+                We believe in natural beauty without chemicals.
+            </p>
+        </div>
+
+    </section>
+
+    <!-- FAQ (5 QUESTIONS) -->
+    <section id="faq" class="page">
+
+        <div class="box">
+            <h1>❓ FAQ</h1>
+
+            <p><b>Q1:</b> Are products safe?<br>Yes, 100% herbal.</p><br>
+            <p><b>Q2:</b> Delivery time?<br>2-5 days.</p><br>
+            <p><b>Q3:</b> COD available?<br>Yes.</p><br>
+            <p><b>Q4:</b> Return policy?<br>7 days easy return.</p><br>
+            <p><b>Q5:</b> Works on all hair types?<br>Yes, all types.</p>
+
+        </div>
+
+    </section>
+
+    <script>
+
+        function show(id) {
+            document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+            document.getElementById(id).classList.add('active');
+        }
+
+        /* CART */
+        let cart = [];
+        function addCart(item) {
+            cart.push(item);
+            renderCart();
+        }
+
+        function renderCart() {
+            let list = document.getElementById("cartList");
+            list.innerHTML = "";
+            cart.forEach((c, i) => {
+                list.innerHTML += `<li>${c}</li>`;
+            });
+        }
+
+        /* QUIZ (5 QUESTIONS) */
+        let q = [
+            "How often do you oil your hair?",
+            "Do you use heat tools?",
+            "Is your hair dry or oily?",
+            "Do you wash hair daily?",
+            "Do you face hair fall?",
+        ];
+
+        let o = [
+            ["Daily", "Weekly", "Never"],
+            ["Yes", "Sometimes", "No"],
+            ["Dry", "Normal", "Oily"],
+            ["Yes", "No", "Sometimes"],
+            ["High", "Medium", "Low"],
+        ];
+
+        let i = 0, score = 0;
+
+        function load() {
+            if (i >= 5) {
+                document.getElementById("q").innerText = "Quiz Completed!";
+                document.getElementById("options").innerHTML = "";
+                document.getElementById("result").innerText = "Thank you!";
+                return;
+            }
+
+            document.getElementById("q").innerText = q[i];
+
+            document.getElementById("options").innerHTML =
+                o[i].map((x, idx) =>
+                    `<button onclick="next(${idx})">${x}</button>`
+                ).join("");
+        }
+
+        function next(v) {
+            score += v;
+            i++;
+            load();
+        }
+
+        load();
+
+        /* PAYMENT */
+        let method = "None";
+        function selectPay(m) {
+            method = m;
+            document.getElementById("selectedPay").innerText = m;
+        }
+
+        function confirmOrder() {
+            alert("Order placed using " + method);
+        }
+
+    </script>
 
 </body>
+
 </html>
+
+    
