@@ -1,0 +1,56 @@
+<!doctype html>
+<html>
+
+<head>
+    <title>String Methods</title>
+</head>
+<body>
+    <h1>JavaScript String Methods</h1>
+    <p id="demo1"></p>
+    <p id="demo2"></p>
+    <p id="demo3"></p>
+    <p id="demo4"></p>
+    <p id="demo5"></p>
+    <p id="demo6"></p>
+    <p id="demo7"></p>
+    <p id="demo8"></p>
+    <p id="demo9"></p>
+    <p id="demo10"></p>
+    <script>
+        var str = "Hello Urvi";
+        var str2 = " Welcome";
+        // length
+        document.getElementById("demo1").innerHTML =
+            "Length of string: " + str.length;
+        // toUpperCase()
+        document.getElementById("demo2").innerHTML =
+            "Uppercase: " + str.toUpperCase();
+        // toLowerCase()
+        document.getElementById("demo3").innerHTML =
+            "Lowercase: " + str.toLowerCase();
+        // slice()
+        document.getElementById("demo4").innerHTML =
+            "Slice: " + str.slice(0, 5);
+        // replace()
+        document.getElementById("demo5").innerHTML =
+            "Replace: " + str.replace("Urvi", "World");
+        // charAt()
+        document.getElementById("demo6").innerHTML =
+            "charAt(1): " + str.charAt(1);
+        // concat()
+        document.getElementById("demo7").innerHTML =
+            "concat(): " + str.concat(str2);
+        // search()
+        document.getElementById("demo8").innerHTML =
+            "search('Urvi'): " + str.search("Urvi");
+        // substring()
+        document.getElementById("demo9").innerHTML =
+            "substring(0,5): " + str.substring(0, 5);
+        // indexOf()
+        document.getElementById("demo10").innerHTML =
+            "indexOf('o'): " + str.indexOf("o");
+    </script>
+    
+</body>
+
+</html>
