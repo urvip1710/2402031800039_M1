@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>CityCare Healthcare System</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+    <h1>🏥 CityCare Healthcare System</h1>
+    <p>Hospital + Blood Bank Management</p>
+    <p id="clock"></p>
+</header>
+
+<nav>
+    <button onclick="show('home')">Home</button>
+    <button onclick="show('doctors')">Doctors</button>
+    <button onclick="show('appointment')">Appointment</button>
+    <button onclick="show('blood')">Blood Bank</button>
+    <button onclick="show('contact')">Contact</button>
+    <button onclick="show('about')">About</button>
+</nav>
+
+<!-- HOME -->
+<section id="home" class="page active">
+    <div class="box">
+        <h2>Welcome</h2>
+        <p>This system manages hospital appointments and blood donation services.</p>
+    </div>
+
+    <div class="box">
+        <h3>Services</h3>
+        <p>✔ Online Appointment Booking</p>
+        <p>✔ Blood Donor Search</p>
+        <p>✔ Emergency Support</p>
+
+        <button onclick="notify('🚨 Emergency Alert Sent!')">🚨 Emergency Help</button>
+    </div>
+</section>
+
+<!-- DOCTORS -->
+<section id="doctors" class="page">
+
+    <div class="box">
+        <h2>👨‍⚕️ Available Doctors</h2>
+        <p>List of available doctors in hospital.</p>
+    </div>
+
+    <div class="card">
+        <h3>Dr. Sharma</h3>
+        <p>Cardiologist</p>
+        <button onclick="likeDoctor(this)">❤️ Like</button>
+    </div>
+
+    <div class="card">
+        <h3>Dr. Mehta</h3>
+        <p>Pediatrics</p>
+        <button onclick="likeDoctor(this)">❤️ Like</button>
+    </div>
+
+    <div class="card">
+        <h3>Dr. Patel</h3>
+        <p>Orthopedic</p>
+        <button onclick="likeDoctor(this)">❤️ Like</button>
+    </div>
+
+    <div class="card">
+        <h3>Dr. Khan</h3>
+        <p>General Physician</p>
+        <button onclick="likeDoctor(this)">❤️ Like</button>
+    </div>
+
+</section>
+
+<!-- APPOINTMENT -->
+<section id="appointment" class="page">
+
+    <div class="box">
+        <h2>🏥 Book Appointment</h2>
+
+        <input type="text" id="pname" placeholder="Patient Name">
+
+        <select id="dept">
+            <option>General</option>
+            <option>Cardiology</option>
+            <option>Skin</option>
+            <option>Orthopedic</option>
+            <option>Neurology</option>
+            <option>Pediatrics</option>
+        </select>
+
+        <input type="date" id="date">
+
+        <button onclick="book()">Book Appointment</button>
+
+        <p id="msg"></p>
+    </div>
+
+</section>
+
+<!-- BLOOD BANK -->
+<section id="blood" class="page">
+
+    <div class="box">
+        <h2>🩸 Find Blood Donor</h2>
+
+        <p>Total Donors: <span id="count">0</span></p>
+
+        <select id="bloodGroup">
+            <option>A+</option>
+            <option>A-</option>
+            <option>B+</option>
+            <option>B-</option>
+            <option>O+</option>
+            <option>O-</option>
+            <option>AB+</option>
+            <option>AB-</option>
+        </select>
+
+        <button onclick="searchDonor()">Search</button>
+
+        <p id="result"></p>
+    </div>
+
+    <div class="box">
+        <h2>Register Donor</h2>
+
+        <input type="text" id="dname" placeholder="Name">
+        <input type="number" id="dage" placeholder="Age">
+        <input type="text" id="dbg" placeholder="Blood Group">
+
+        <button onclick="register()">Register</button>
+
+        <p id="msg2"></p>
+    </div>
+
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="page">
+    <div class="box">
+        <h2>Contact Us</h2>
+
+        <input type="text" placeholder="Name">
+        <input type="email" placeholder="Email">
+        <textarea placeholder="Message"></textarea>
+
+        <button onclick="notify('Message Sent!')">Send</button>
+    </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about" class="page">
+    <div class="box">
+    <h2>📖 About CityCare Healthcare System</h2>
+    <p>
+        CityCare Healthcare System is a web-based application designed to manage hospital services and blood bank operations in an efficient and organized way.
+        It provides users with an easy platform to book hospital appointments and find blood donors quickly during emergencies.
+    </p>
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>

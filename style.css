@@ -1,0 +1,129 @@
+/* ===== GLOBAL STYLE ===== */
+body{
+    font-family: Arial;
+    margin:0;
+    background: linear-gradient(135deg, #e3f2fd, #f5f7fb);
+}
+
+/* ===== HEADER ===== */
+header{
+    background: linear-gradient(90deg, #0d47a1, #1976d2);
+    color:white;
+    text-align:center;
+    padding:20px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+/* ===== NAVIGATION ===== */
+nav{
+    background:#0d47a1;
+    text-align:center;
+    padding:10px;
+}
+
+nav button{
+    background:white;
+    border:none;
+    color:#0d47a1;
+    margin:6px;
+    padding:10px 15px;
+    border-radius:20px;
+    cursor:pointer;
+    font-weight:bold;
+    transition:0.3s;
+}
+
+nav button:hover{
+    background:#0d47a1;
+    color:white;
+    transform: scale(1.1);
+}
+
+/* ===== PAGE SYSTEM ===== */
+.page{
+    display:none;
+    padding:20px;
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn{
+    from {opacity:0; transform: translateY(10px);}
+    to {opacity:1; transform: translateY(0);}
+}
+
+.active{
+    display:block;
+}
+
+/* ===== BOX DESIGN (CARDS) ===== */
+.box{
+    background:white;
+    padding:25px;
+    margin:20px;
+    border-radius:15px;
+    box-shadow:0 8px 20px rgba(0,0,0,0.1);
+    transition:0.3s;
+}
+
+.box:hover{
+    transform: translateY(-5px);
+}
+
+/* ===== DOCTOR CARD ===== */
+.card{
+    background: white;
+    padding:20px;
+    margin:15px;
+    border-radius:15px;
+    box-shadow:0 5px 15px rgba(0,0,0,0.1);
+    text-align:center;
+    transition:0.3s;
+}
+
+.card:hover{
+    transform: scale(1.05);
+}
+
+/* ===== INPUT FIELDS ===== */
+input, select, textarea{
+    width:100%;
+    padding:10px;
+    margin:8px 0;
+    border-radius:8px;
+    border:1px solid #ccc;
+}
+
+/* ===== BUTTONS ===== */
+button{
+    background: linear-gradient(90deg, #1976d2, #42a5f5);
+    color:white;
+    border:none;
+    padding:12px;
+    width:100%;
+    cursor:pointer;
+    border-radius:10px;
+    font-weight:bold;
+    transition:0.3s;
+}
+
+button:hover{
+    transform: scale(1.03);
+    box-shadow:0 5px 15px rgba(0,0,0,0.2);
+}
+
+/* ===== TOP BUTTON ===== */
+.top{
+    position:fixed;
+    bottom:10px;
+    left:10px;
+    width:auto;
+    padding:10px 15px;
+    border-radius:50px;
+}
+
+/* ===== SMALL TEXT (CLOCK etc) ===== */
+#clock{
+    font-size:16px;
+    margin-top:5px;
+    opacity:0.9;
+}
